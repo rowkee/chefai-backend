@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.post("/meals", mealsFunction);
+app.post("/meals", cors(corsOptions), mealsFunction);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
