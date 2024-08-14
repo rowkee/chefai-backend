@@ -3,6 +3,12 @@ import mealsFunction from "./config/openaiConfig.js";
 import express from "express";
 import cors from "cors";
 
+const corsOptions = {
+  origin: `${process.env.FRONT_END_URL}`,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+};
+
 const app = express();
 const port = 4000;
 
