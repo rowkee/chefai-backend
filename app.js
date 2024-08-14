@@ -1,10 +1,10 @@
-import mealsFunction from "./config/openaiConfig.js";
 import dotenv from "dotenv";
+dotenv.config();
+
+import mealsFunction from "./config/openaiConfig.js";
 
 import express from "express";
 import cors from "cors";
-
-dotenv.config();
 
 const app = express();
 const port = 4000;
