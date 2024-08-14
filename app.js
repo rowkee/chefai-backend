@@ -3,25 +3,26 @@ import mealsFunction from "./config/openaiConfig.js";
 import express from "express";
 import cors from "cors";
 
+const app = express();
+const port = 4000;
+
 const corsOptions = {
-  origin: `${process.env.FRONT_END_URL}`,
+  origin: process.env.FRONT_END_URL || "http://localhost:3000",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 };
 
-const app = express();
-const port = 4000;
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.static("public"));
-app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
 app.post("/meals", mealsFunction);
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
