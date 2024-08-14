@@ -13,6 +13,7 @@ const corsOptions = {
   origin: "https://chefai-frontend-khaki.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
+  headers: "Access-Control-Allow-Origin",
 };
 
 app.use(cors(corsOptions));
