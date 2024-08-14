@@ -32,8 +32,6 @@ async function mealsFunction(req, res) {
 }
 
 async function shoppingList(meals) {
-  console.log(meals);
-
   const ingredients = await openai.chat.completions.create({
     messages: [
       {
