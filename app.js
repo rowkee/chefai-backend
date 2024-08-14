@@ -12,8 +12,6 @@ const port = 4000;
 const corsOptions = {
   origin: "https://chefai-frontend-khaki.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
-  headers: "Access-Control-Allow-Origin",
 };
 
 app.use(cors(corsOptions));
@@ -25,7 +23,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.post("/meals", cors(corsOptions), mealsFunction);
+app.post("/meals", mealsFunction);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
