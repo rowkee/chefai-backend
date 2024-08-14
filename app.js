@@ -10,7 +10,7 @@ const app = express();
 const port = 4000;
 
 const corsOptions = {
-  origin: process.env.FRONT_END_URL || "http://localhost:3000",
+  origin: "https://chefai-frontend-khaki.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 };
