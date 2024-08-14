@@ -11,7 +11,7 @@ const port = 4000;
 
 const corsOptions = {
   origin: "https://chefai-frontend-khaki.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  optionsSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));
